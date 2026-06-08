@@ -1,0 +1,166 @@
+/* =========================================
+   עיצוב דף סליקה יוקרתי - טרנזילה
+========================================= */
+
+/* קופסת הטופס הראשית (המסגרת שעוטפת הכל) */
+.premium-payment-form {
+  max-width: 600px; /* רוחב מושלם וקומפקטי */
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 20px; /* פינות עגולות גדולות ורכות */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* הצללה מרחפת ויוקרתית */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  direction: rtl; /* יישור לימין לעברית */
+}
+.premium-payment-form .logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 180px;
+  height: auto;
+}
+/* כותרת הטופס */
+.form-title {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: 600;
+}
+.card-icon {
+  margin-top: 12px;
+  font-size: 32px; /* פה אתה מגדיל או מקטין את האייקון */
+  margin-right: 6px; /* רווח קטן בין האייקון למילים */
+  vertical-align: middle; /* מיישר את האייקון לאמצע השורה שלא "ייפול" למטה */
+}
+/* הגדרות לכל שורת שדה */
+.field-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* עיצוב הטקסט שמעל השדה (Label) */
+.field-group label {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.field-group label .span {
+  max-width: 400px;
+  font-size: 20px;
+  color: #64748b;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* קופסת השדה הריקה (שלתוכה טרנזילה נכנסת) */
+.secure-input-box {
+  height: 45px;
+  background-color: #fcfcfc;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px; /* פינות מעוגלות לשדה עצמו */
+  padding: 0 15px;
+  transition: all 0.3s ease; /* מעבר חלק לאפקט הלחיצה */
+}
+
+/* === הקסם של טרנזילה: מה קורה כשהלקוח לוחץ על השדה === */
+/* טרנזילה מוסיפה את הקלאס tzla-focus באופן אוטומטי */
+.secure-input-box.tzla-focus {
+  background-color: #ffffff;
+  border-color: #64748b; /* המסגרת הופכת לירוק היוקרתי שלנו */
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15); /* הילה ירוקה עדינה מסביב לשדה */
+}
+
+/* פתרון ה"אותה שורה" לתוקף ו-CVV */
+.field-row-split {
+  display: flex;
+  gap: 15px; /* מרווח בין שני השדות */
+}
+.field-row-split .half-width {
+  flex: 1; /* כל שדה תופס חצי מהמקום בדיוק */
+}
+
+/* כפתור התשלום */
+.premium-submit-btn {
+  width: 100%;
+  background-color: #10b981; /* הירוק שלנו */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+  margin-top: 10px;
+}
+
+/* אפקט מעבר עכבר על הכפתור */
+.premium-submit-btn:hover {
+  background-color: #0d9668; /* ירוק קצת יותר כהה */
+}
+
+/* אפקט לחיצה על הכפתור */
+.premium-submit-btn:active {
+  transform: scale(0.98); /* הכפתור נלחץ מעט פנימה */
+}
+/* =========================================
+   עיצוב שורת הסכום לתשלום
+========================================= */
+.payment-summary {
+  display: flex;
+  justify-content: space-between; /* דוחף צד אחד לימין וצד שני לשמאל */
+  align-items: center; /* ממרכז אותם יחד מבחינת גובה */
+  background-color: #f8fafc; /* אפור-כחלחל סופר עדין (כמו השדות) */
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 25px; /* מרווח יפה מהשדות שמעל */
+  margin-bottom: 15px; /* מרווח לפני הכפתור שמתחת */
+}
+
+/* המילים "סה"כ לתשלום" */
+.summary-text {
+  font-size: 20px;
+  color: #64748b; /* אפור מעושן אלגנטי */
+  font-weight: 400px;
+}
+
+/* הסכום עצמו */
+.summary-amount {
+  font-size: 22px; /* גדול ובולט יותר */
+  color: #10b981; /* הירוק המזוהה עם התשלום שלנו */
+  font-weight: 400px;
+  letter-spacing: 0.5px;
+}
+/* =========================================
+   התאמה למובייל (רספונסיביות)
+========================================= */
+@media screen and (max-width: 600px) {
+  /* הופך את השורה המחולקת לעמודה שבה כל שדה תופס שורה שלמה */
+  .field-row-split {
+    flex-direction: column;
+    gap: 15px; /* שומר על המרווח היפה ביניהם */
+  }
+
+  /* מקטין מעט את הריווח החיצוני והפנימי של הטופס כדי שייראה טוב בנייד */
+  .premium-payment-form {
+    padding: 25px 20px;
+    margin: 20px 15px;
+  }
+
+  /* הקטנה עדינה של הכותרות במובייל */
+  .form-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* התאמת גודל הלוגו למובייל */
+  .form-logo {
+    max-width: 120px;
+  }
+}

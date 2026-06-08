@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tranzila payment page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="premium-payment-form">
+        <img class="logo" src="images/tranzilalg.png" />
+        <h2 class="form-title">פרטי תשלום</h2>
+        <input type="hidden" id="checkout-total-amount" value="250.00" />
+
+        <div class="field-group">
+          <label>מספר כרטיס אשראי <span class="card-icon">💳</span></label>
+          <div id="tranzila-card-number" class="secure-input-box"></div>
+        </div>
+
+        <div class="field-row-split">
+          <div class="field-group half-width">
+            <label>תוקף (MM/YY)</label>
+            <div id="tranzila-expiry" class="secure-input-box"></div>
+          </div>
+
+          <div class="field-group half-width">
+            <label>קוד אבטחה (CVV)</label>
+            <div id="tranzila-cvv" class="secure-input-box"></div>
+          </div>
+          <div class="field-group half-width">
+            <label>תעודת זהות</label>
+            <div id="tranzila-id" class="secure-input-box"></div>
+          </div>
+        </div>
+        <div class="payment-summary">
+          <span class="summary-text">סה"כ לתשלום:</span>
+          <span class="summary-amount">₪100.00</span>
+        </div>
+
+        <button id="submit-payment-btn" class="premium-submit-btn">
+          לתשלום מאובטח
+        </button>
+      </div>
+    </header>
+    <script src="https://hf.tranzila.com/assets/js/thostedf.js"></script>
+  </body>
+</html>
